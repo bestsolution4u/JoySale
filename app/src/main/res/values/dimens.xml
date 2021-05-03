@@ -1,0 +1,39 @@
+<resources>
+
+    <dimen name="text_very_small">11sp</dimen>
+    <dimen name="text_small">13sp</dimen>
+    <dimen name="text_normal">15sp</dimen>
+    <dimen name="text_medium">17sp</dimen>
+    <dimen name="text_large">19sp</dimen>
+    <dimen name="text_very_large">21sp</dimen>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+
+
+    <dimen name="slidingmenu_Behind_offset">300dp</dimen>
+
+    <!-- Default Parallax ImageView Height  -->
+
+    <dimen name="progress_size">40dp</dimen>
+
+    <dimen name="divider_height">0.7dp</dimen>
+
+    <dimen name="fab_default_elevation">8dp</dimen>
+    <dimen name="fab_size_normal">56dp</dimen>
+    <dimen name="fab_size_mini">40dp</dimen>
+    <dimen name="fab_circle_radius">500dp</dimen>
+    <dimen name="fab_text_horizontal_margin_normal">16dp</dimen>
+    <dimen name="fab_text_horizontal_margin_mini">10dp</dimen>
+
+    <dimen name="thumb_width">18dp</dimen>
+    <dimen name="thumb_height">18dp</dimen>
+
+    <dimen name="calendar_day_headers_paddingbottom">4dp</dimen>
+    <dimen name="calendar_month_topmargin">16dp</dimen>
+    <dimen name="calendar_month_title_bottommargin">4dp</dimen>
+    <dimen name="calendar_text_medium">18sp</dimen>
+    <dimen name="calendar_text_small">14sp</dimen>
+
+    <dimen name="corner_radius_rounded">25dp</dimen>
+    <dimen name="corner_radius_default">2dp</dimen>
+</resources>

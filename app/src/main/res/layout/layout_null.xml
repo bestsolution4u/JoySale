@@ -1,0 +1,40 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nullLay"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:visibility="visible">
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        android:src="@drawable/no_item" />
+
+    <com.hitasoft.app.external.CustomTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+        android:text="@string/sorry"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/primaryText"
+        app:fonts="font_regular.ttf" />
+
+    <com.hitasoft.app.external.CustomTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+        android:maxLines="1"
+        android:text="@string/noItem"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/primaryText"
+        app:fonts="font_regular.ttf" />
+
+</LinearLayout>

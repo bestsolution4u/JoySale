@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/itemLay"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:padding="10dp">
+
+        <com.hitasoft.app.external.CustomTextView
+            android:id="@+id/txtLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start|center_vertical"
+            android:singleLine="true"
+            android:text="@string/price"
+            android:textAlignment="viewStart"
+            android:textColor="@color/primaryText"
+            android:textSize="@dimen/text_medium"
+            app:fonts="font_regular.ttf" />
+
+        <com.hitasoft.app.external.rangeseekbar.CrystalRangeSeekbar
+            android:id="@+id/rangeBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtLabel"
+            android:layout_marginTop="10dp"
+            android:background="@color/white"
+            app:bar_color="@color/bg"
+            app:bar_highlight_color="@color/colorPrimary"
+            app:gap="1"
+            app:left_thumb_color="@color/colorPrimary"
+            app:left_thumb_color_pressed="@color/colorPrimary"
+            app:right_thumb_color="@color/colorPrimary"
+            app:right_thumb_color_pressed="@color/colorPrimary" />
+
+        <com.hitasoft.app.external.CustomTextView
+            android:id="@+id/txtMinValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rangeBar"
+            android:layout_alignParentStart="true"
+            android:paddingStart="5dp"
+            android:paddingTop="5dp"
+            android:paddingEnd="5dp"
+            android:textAllCaps="true"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+            android:textColor="@color/colorPrimary"
+            app:fonts="font_regular.ttf" />
+
+        <com.hitasoft.app.external.CustomTextView
+            android:id="@+id/txtMaxValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/txtMinValue"
+            android:layout_alignParentEnd="true"
+            android:paddingTop="5dp"
+            android:textAllCaps="true"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+            android:textColor="@color/colorPrimary"
+            app:fonts="font_regular.ttf" />
+
+    </RelativeLayout>
+
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="@color/bg" />
+
+</LinearLayout>

@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1012528152001",
+    "project_id": "joysale-da6c0",
+    "storage_bucket": "joysale-da6c0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1012528152001:android:87015a6f0a8d9b0f508340",
+        "android_client_info": {
+          "package_name": "com.hitasoft.app.joysale"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1012528152001-rtnfhe9vnv2dk642vqaag9k08tuokon2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hitasoft.app.joysale",
+            "certificate_hash": "1ed9eab2cdcdc44f33175412802690f6870610b2"
+          }
+        },
+        {
+          "client_id": "1012528152001-6gfv66r40ffp1729sf0487k47kthcnvn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCRb5NDNa-rzYke-iqDtzCVd44oRgf2kcA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1012528152001-6gfv66r40ffp1729sf0487k47kthcnvn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

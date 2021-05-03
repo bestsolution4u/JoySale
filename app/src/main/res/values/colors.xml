@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">#e40046</color>
+    <color name="colorPrimaryDark">#cd003f</color>
+    <color name="colorAccent">#FFFFFF</color>
+    <color name="colorSecondary">#464e55</color>
+    <color name="divider">#e5ebf1</color>
+    <color name="bg">#f6f6f6</color>
+    <color name="primaryText">#444444</color>
+    <color name="secondaryText">#666666</color>
+    <color name="red">#ff003c</color>
+    <color name="white">#FFFFFF</color>
+    <color name="border_dark">#B6B6B6</color>
+    <color name="black">#000000</color>
+    <color name="progressColor">@color/colorPrimary</color>
+    <color name="grey">#cccccc</color>
+    <color name="sold_out">#de6b18</color>
+    <color name="line">#e5ebf1</color>
+    <color name="blue">#4d90fe</color>
+    <color name="white_transparent">#F2ffffff</color>
+    <color name="transparent_white">#99FFFFFF</color>
+    <color name="textPrimary">#FFFFFF</color>
+    <color name="green_color">#2bc248</color>
+    <color name="starColor">#ff9000</color>
+    <color name="red_color">#ff0000</color>
+    <color name="seekbar_alpha_color">#1Ae40046</color>
+    <color name="chat_right_color">#eddfe3</color>
+    <color name="multiple_image_select_primary">@color/colorPrimary</color>
+    <color name="multiple_image_select_accent">#4CAF50</color>
+    <color name="colorDisabled">#9D9FA2</color>
+    <color name="multiple_image_select_toolbarPrimaryText">#FFFFFF</color>
+    <!--<color name="multiple_image_select_albumTextBackground">#99FFFFFF</color>-->
+    <color name="multiple_image_select_imageSelectBackground">#000000</color>
+
+    <color name="calendar_active_month_bg">@color/white</color>
+    <color name="calendar_bg">#FFFFFF</color>
+    <color name="calendar_divider">#ffbababa</color>
+    <color name="calendar_inactive_month_bg">#ffd7d9db</color>
+    <color name="calendar_selected_day_bg">@color/colorPrimary</color>
+    <color name="calendar_highlighted_day_bg">@color/white</color>
+    <color name="calendar_selected_range_bg">#ff96caff</color>
+    <color name="calendar_text_inactive">@color/grey</color>
+    <color name="calendar_text_active">@color/white</color>
+    <color name="calendar_text_selected">@color/white</color>
+    <color name="calendar_text_unselectable">#7f778088</color>
+    <color name="calendar_text_highlighted">@color/colorPrimary</color>
+
+    <color name="dateTimeRangePickerStateDefault">@android:color/black</color>
+    <color name="dateTimeRangePickerStateNonSelectable">@android:color/white</color>
+    <color name="dateTimeRangePickerStateToday">#ffcf40</color>
+    <color name="dateTimeRangePickerHeaderTextColor">@android:color/black</color>
+    <color name="dateTimeRangePickerTitleTextColor">@android:color/black</color>
+    <color name="dateTimeRangePickerRangeTextColorActive">@android:color/white</color>
+    <color name="dateTimeRangePickerRangeTextColorInactive">#B9B9B9</color>
+
+    //Material SearchBar Light Theme Colors
+    <color name="searchBarIconColor">#3a3a3a</color>
+    //Base
+    <color name="searchBarPrimaryColor">@color/bg</color>
+    <color name="searchBarCursorColor">#8000a1ff</color>
+    <color name="searchBarDividerColor">#1F000000</color>
+
+    //Icons
+    <color name="searchBarNavIconTintColor">@color/searchBarIconColor</color>
+    <color name="searchBarMenuIconTintColor">@color/searchBarIconColor</color>
+    <color name="searchBarSearchIconTintColor">@color/searchBarIconColor</color>
+    <color name="searchBarClearIconTintColor">@color/searchBarIconColor</color>
+    <color name="searchBarBackIconTintColor">@color/searchBarIconColor</color>
+
+    //Text
+    <color name="searchBarTextColor">#DE000000</color>
+    <color name="searchBarHintColor">#42000000</color>
+    <color name="searchBarPlaceholderColor">#8A000000</color>
+    <color name="searchBarTextHighlightColor">#8000a1ff</color>
+
+    //Base
+    <color name="searchBarPrimaryColorDark">#303030</color>
+    <color name="searchBarDividerColorDark">#1FFFFFFF</color>
+
+    //Material SearchBar Dark Theme Colors
+    <color name="searchBarIconColorDark">#00a1ff</color>
+    //Icons
+    <color name="searchBarNavIconTintColorDark">@color/searchBarIconColorDark</color>
+    <color name="searchBarMenuIconTintColorDark">@color/searchBarIconColorDark</color>
+    <color name="searchBarSearchIconTintColorDark">@color/searchBarIconColorDark</color>
+    <color name="searchBarClearIconTintColorDark">@color/searchBarIconColorDark</color>
+    <color name="searchBarBackIconTintColorDark">@color/searchBarIconColorDark</color>
+
+    //Text
+    <color name="searchBarTextColorDark">#DEFFFFFF</color>
+    <color name="searchBarHintColorDark">#42FFFFFF</color>
+    <color name="searchBarPlaceholderColorDark">#8AFFFFFF</color>
+    <color name="searchBarTextHighlightColorDark">#BF00a1ff</color>
+</resources>

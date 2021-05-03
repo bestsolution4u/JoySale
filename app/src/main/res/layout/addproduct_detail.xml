@@ -1,0 +1,689 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg">
+
+    <include
+        android:id="@+id/actionbar"
+        layout="@layout/actionbar_activity"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/saveLay"
+        android:layout_below="@+id/actionbar"
+        android:clipToPadding="false"
+        android:isScrollContainer="true"
+        android:paddingBottom="10dp">
+
+        <LinearLayout
+            android:id="@+id/parentLay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:focusable="true"
+            android:layoutDirection="@string/layout_direction"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:background="@color/bg"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:visibility="visible">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/imageList"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:clipToPadding="false"
+                    android:paddingStart="10dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/detailLay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <com.hitasoft.app.external.CustomEditText
+                    android:id="@+id/productName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:hint="@string/what_are_you_selling"
+                    android:inputType="textCapSentences|text"
+                    android:maxLength="70"
+                    android:paddingStart="10dp"
+                    android:paddingTop="15dp"
+                    android:paddingEnd="10dp"
+                    android:paddingBottom="15dp"
+                    android:singleLine="true"
+                    android:textAlignment="viewStart"
+                    android:textColorHint="@color/secondaryText"
+                    android:textSize="@dimen/text_medium" />
+
+                <com.hitasoft.app.external.CustomEditText
+                    android:id="@+id/productDes"
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/white"
+                    android:gravity="start|top"
+                    android:hint="@string/describe_your_listing"
+                    android:inputType="textCapSentences|textMultiLine|text"
+                    android:overScrollMode="always"
+                    android:padding="10dp"
+                    android:scrollbarStyle="insideInset"
+                    android:scrollbars="vertical"
+                    android:textAlignment="viewStart"
+                    android:textColorHint="@color/secondaryText"
+                    android:textSize="@dimen/text_medium" />
+
+                <RelativeLayout
+                    android:id="@+id/givingLay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/givingAwaySwitch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:theme="@style/SwitchTheme" />
+
+                    <com.hitasoft.app.external.CustomTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:singleLine="true"
+                        android:text="@string/giving_away"
+                        android:textColor="@color/primaryText"
+                        android:textSize="@dimen/text_medium"
+                        app:fonts="font_regular.ttf" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/priceLay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="center_vertical"
+                            android:layout_toStartOf="@+id/view_divider"
+                            android:background="@color/white"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:visibility="visible">
+
+                            <com.hitasoft.app.external.CustomTextView
+                                android:id="@+id/txtPrice"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_alignParentStart="true"
+                                android:gravity="start|center_vertical"
+                                android:singleLine="true"
+                                android:text="@string/price"
+                                android:textColor="@color/primaryText"
+                                android:textSize="@dimen/text_medium"
+                                app:fonts="font_regular.ttf" />
+
+                            <com.hitasoft.app.external.CustomEditText
+                                android:id="@+id/price"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_alignParentEnd="true"
+                                android:layout_toEndOf="@+id/txtPrice"
+                                android:background="@color/white"
+                                android:gravity="end|center_vertical"
+                                android:hint="@string/enter_your_price"
+                                android:inputType="numberDecimal"
+                                android:singleLine="true"
+                                android:textAlignment="viewEnd"
+                                android:textColor="@color/secondaryText"
+                                android:textColorHint="@color/secondaryText"
+                                android:textDirection="ltr"
+                                android:textSize="@dimen/text_medium"
+                                app:fonts="font_regular.ttf" />
+
+                        </RelativeLayout>
+
+                        <View
+                            android:id="@+id/view_divider"
+                            android:layout_width="0.5dp"
+                            android:layout_height="match_parent"
+                            android:layout_centerVertical="true"
+                            android:layout_margin="10dp"
+                            android:layout_toStartOf="@id/currency"
+                            android:background="@color/divider" />
+
+                        <Spinner
+                            android:id="@+id/currency"
+                            android:layout_width="wrap_content"
+                            android:layout_height="35dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="5dp"
+                            android:background="@null"
+                            android:gravity="end"
+                            android:prompt="@string/selectcategory"
+                            android:textAppearance="@android:style/TextAppearance.Small" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/categoryLay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:padding="10dp">
+
+                    <com.hitasoft.app.external.CustomTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:singleLine="true"
+                        android:text="@string/category"
+                        android:textColor="@color/primaryText"
+                        android:textSize="@dimen/text_medium"
+                        app:fonts="font_regular.ttf" />
+
+                    <com.hitasoft.app.external.CustomTextView
+                        android:id="@+id/category"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toStartOf="@+id/catArrow"
+                        android:gravity="end"
+                        android:maxWidth="180dp"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:singleLine="true"
+                        android:text="@string/select_your_category"
+                        android:textColor="@color/secondaryText"
+                        android:textSize="@dimen/text_medium"
+                        app:fonts="font_regular.ttf" />
+
+                    <ImageView
+                        android:id="@+id/catArrow"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="10dp"
+                        android:background="@null"
+                        android:src="@drawable/f_arrow"
+                        android:tint="@color/secondaryText" />
+
+                </RelativeLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/filterRecycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:nestedScrollingEnabled="false"
+                    android:visibility="gone" />
+
+                <RelativeLayout
+                    android:id="@+id/locationLay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:padding="10dp">
+
+                    <com.hitasoft.app.external.CustomTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:singleLine="true"
+                        android:text="@string/location"
+                        android:textColor="@color/primaryText"
+                        android:textSize="@dimen/text_medium"
+                        app:fonts="font_regular.ttf" />
+
+                    <com.hitasoft.app.external.CustomTextView
+                        android:id="@+id/location"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toStartOf="@+id/locArrow"
+                        android:ellipsize="end"
+                        android:gravity="end"
+                        android:maxWidth="180dp"
+                        android:maxLines="1"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:text="@string/set_your_location"
+                        android:textColor="@color/secondaryText"
+                        android:textSize="@dimen/text_medium"
+                        app:fonts="font_regular.ttf" />
+
+                    <ImageView
+                        android:id="@+id/locArrow"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="10dp"
+                        android:background="@null"
+                        android:src="@drawable/f_arrow"
+                        android:tint="@color/secondaryText" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/bottomLay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <RelativeLayout
+                    android:id="@+id/conditionLay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:padding="10dp">
+
+                    <com.hitasoft.app.external.CustomTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:singleLine="true"
+                        android:text="@string/itemcondition"
+                        android:textColor="@color/primaryText"
+                        android:textSize="@dimen/text_medium"
+                        app:fonts="font_regular.ttf" />
+
+                    <com.hitasoft.app.external.CustomTextView
+                        android:id="@+id/itemCondition"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toStartOf="@+id/condArrow"
+                        android:maxWidth="180dp"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:singleLine="true"
+                        android:text=""
+                        android:textColor="@color/secondaryText"
+                        android:textSize="@dimen/text_medium"
+                        app:fonts="font_regular.ttf" />
+
+                    <ImageView
+                        android:id="@+id/condArrow"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="10dp"
+                        android:background="@null"
+                        android:src="@drawable/f_arrow"
+                        android:tint="@color/secondaryText" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/divider" />
+
+                <RelativeLayout
+                    android:id="@+id/exchangeLay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/exchangeSwitch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:theme="@style/SwitchTheme" />
+
+                    <com.hitasoft.app.external.CustomTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:singleLine="true"
+                        android:text="@string/exchangebuy"
+                        android:textColor="@color/primaryText"
+                        android:textSize="@dimen/text_medium"
+                        app:fonts="font_regular.ttf" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/offerLay"
+                    android:orientation="vertical">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:background="@color/divider" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="10dp"
+                        android:visibility="visible">
+
+
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:id="@+id/chatSwitch"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:paddingTop="5dp"
+                            android:paddingBottom="5dp"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:theme="@style/SwitchTheme" />
+
+                        <com.hitasoft.app.external.CustomTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:paddingTop="5dp"
+                            android:paddingBottom="5dp"
+                            android:singleLine="true"
+                            android:text="@string/fixedprice"
+                            android:textColor="@color/primaryText"
+                            android:textSize="@dimen/text_medium"
+                            app:fonts="font_regular.ttf" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/instantLay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <RelativeLayout
+                    android:id="@+id/buyLay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/buySwitch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:theme="@style/SwitchTheme" />
+
+                    <com.hitasoft.app.external.CustomTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:singleLine="true"
+                        android:text="@string/instantbuy"
+                        android:textColor="@color/primaryText"
+                        android:textSize="@dimen/text_medium"
+                        app:fonts="font_regular.ttf" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/buynowLay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="10dp"
+                        android:visibility="gone">
+
+                        <com.hitasoft.app.external.CustomTextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.25"
+                            android:paddingTop="5dp"
+                            android:paddingBottom="5dp"
+                            android:singleLine="true"
+                            android:text="@string/paypalid"
+                            android:textColor="@color/primaryText"
+                            android:textSize="@dimen/text_medium"
+                            android:visibility="gone"
+                            app:fonts="font_regular.ttf" />
+
+                        <com.hitasoft.app.external.CustomEditText
+                            android:id="@+id/paypalId"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.45"
+                            android:background="@color/white"
+                            android:gravity="end"
+                            android:hint="@string/enter_paypalid"
+                            android:inputType="textEmailAddress"
+                            android:paddingTop="5dp"
+                            android:paddingBottom="5dp"
+                            android:singleLine="true"
+                            android:textColorHint="@color/secondaryText"
+                            android:textSize="@dimen/text_medium"
+                            android:visibility="gone" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:background="@color/divider" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="10dp">
+
+                        <com.hitasoft.app.external.CustomTextView
+                            android:id="@+id/txtShipping"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:paddingTop="5dp"
+                            android:paddingBottom="5dp"
+                            android:singleLine="true"
+                            android:text="@string/Shipping_fee"
+                            android:textColor="@color/primaryText"
+                            android:textSize="@dimen/text_medium"
+                            app:fonts="font_regular.ttf" />
+
+                        <com.hitasoft.app.external.CustomEditText
+                            android:id="@+id/shippingFee"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_toEndOf="@+id/txtShipping"
+                            android:background="@color/white"
+                            android:digits="0123456789."
+                            android:gravity="end|center_vertical"
+                            android:hint="@string/enter_shipping_cost"
+                            android:inputType="numberDecimal"
+                            android:maxLength="9"
+                            android:paddingTop="5dp"
+                            android:paddingBottom="5dp"
+                            android:singleLine="true"
+                            android:textAlignment="viewEnd"
+                            android:textColorHint="@color/secondaryText"
+                            android:textDirection="ltr"
+                            android:textSize="@dimen/text_medium" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="10dp"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:padding="10dp">
+
+                <com.hitasoft.app.external.CustomEditText
+                    android:id="@+id/edtYoutube"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:hint="@string/enter_youtube_link_optional"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:singleLine="true"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/secondaryText"
+                    android:textSize="@dimen/text_medium"
+                    app:fonts="font_regular.ttf" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="@color/bg" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:id="@+id/saveLay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:visibility="visible">
+
+        <com.hitasoft.app.external.CustomTextView
+            android:id="@+id/cancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/colorSecondary"
+            android:gravity="center"
+            android:padding="15dp"
+            android:singleLine="true"
+            android:text="@string/cancel"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_large"
+            app:fonts="font_regular.ttf" />
+
+        <com.hitasoft.app.external.CustomTextView
+            android:id="@+id/post"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:padding="15dp"
+            android:singleLine="true"
+            android:text="@string/post"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_large"
+            app:fonts="font_regular.ttf" />
+    </LinearLayout>
+
+    <com.wang.avi.AVLoadingIndicatorView
+        android:id="@+id/progress"
+        android:layout_width="@dimen/progress_size"
+        android:layout_height="@dimen/progress_size"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        app:indicatorColor="@color/progressColor"
+        app:indicatorName="BallPulseIndicator" />
+
+</RelativeLayout>

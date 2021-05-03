@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layoutDirection="ltr">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent_white"
+            app:elevation="0dp">
+
+            <androidx.appcompat.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                app:contentInsetLeft="0dp"
+                app:contentInsetStart="0dp"
+                app:layout_scrollFlags="scroll|enterAlways">
+
+                <include
+                    android:id="@+id/toolbar"
+                    layout="@layout/home_toolbar" />
+
+            </androidx.appcompat.widget.Toolbar>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:layoutDirection="@string/layout_direction"
+                android:visibility="visible">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/filterRecycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp" />
+
+                    <View
+                        android:id="@+id/filterView"
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp"
+                        android:layout_below="@+id/filterRecycler" />
+
+                </RelativeLayout>
+            </FrameLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:overScrollMode="never"
+                android:paddingBottom="70dp"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <RelativeLayout
+            android:id="@+id/locationLay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/home_location_bg"
+            android:elevation="4dp"
+            android:layoutDirection="@string/layout_direction"
+            android:padding="10dp"
+            app:layout_anchor="@+id/appbar"
+            app:layout_anchorGravity="bottom|center_horizontal"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <ImageView
+                android:id="@+id/locationIcon"
+                android:layout_width="13dp"
+                android:layout_height="13dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:src="@drawable/map" />
+
+            <com.hitasoft.app.external.CustomTextView
+                android:id="@+id/locationTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/locationIcon"
+                android:ellipsize="end"
+                android:maxWidth="200dp"
+                android:singleLine="true"
+                android:text="@string/world_wide"
+                android:textColor="@color/primaryText"
+                android:textSize="@dimen/text_small"
+                app:fonts="font_regular.ttf" />
+
+            <com.hitasoft.app.external.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/locationTxt"
+                android:paddingStart="5dp"
+                android:text="@string/down"
+                android:textAppearance="@android:style/TextAppearance.Small"
+                android:textColor="@color/primaryText"
+                android:textStyle="bold"
+                app:fonts="fontawesome-webfont.ttf" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/nullLay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/no_item" />
+
+                <com.hitasoft.app.external.CustomTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:text="@string/sorry"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@color/primaryText"
+                    app:fonts="font_regular.ttf" />
+
+                <com.hitasoft.app.external.CustomTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:maxLines="1"
+                    android:text="@string/noItem"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/primaryText"
+                    app:fonts="font_regular.ttf" />
+            </LinearLayout>
+
+            <com.wang.avi.AVLoadingIndicatorView
+                android:id="@+id/progress"
+                android:layout_width="@dimen/progress_size"
+                android:layout_height="@dimen/progress_size"
+                android:layout_centerInParent="true"
+                android:visibility="gone"
+                app:indicatorColor="@color/progressColor"
+                app:indicatorName="BallPulseIndicator" />
+        </RelativeLayout>
+
+        <com.hitasoft.app.external.FloatingActionButton
+            android:id="@+id/btnAddStuff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|bottom"
+            android:layout_margin="30dp"
+            android:gravity="center"
+            android:visibility="visible"
+            app:fabColor="@color/colorPrimary"
+            app:fabIcon="@drawable/cam_float"
+            app:fabIconPosition="start"
+            app:fabMenuGravity="center"
+            app:fabMenuStyle="popRight"
+            app:fabSize="mini"
+            app:fabText="@string/sell_your_stuff"
+            app:fabTextColor="@color/white"
+            app:fabType="circle"
+            app:fonts="font_regular.ttf"
+            app:layout_behavior="com.hitasoft.app.external.FabScrollBehavior" />
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <LinearLayout
+        android:id="@+id/left_drawer"
+        android:layout_width="@dimen/slidingmenu_Behind_offset"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@color/white"
+        android:layoutDirection="ltr"
+        android:orientation="vertical">
+
+        <include
+            layout="@layout/menu_list"
+            android:layout_width="@dimen/slidingmenu_Behind_offset"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+</androidx.drawerlayout.widget.DrawerLayout>
