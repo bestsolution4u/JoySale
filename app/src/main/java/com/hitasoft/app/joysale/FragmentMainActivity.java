@@ -173,7 +173,7 @@ public class FragmentMainActivity extends BaseActivity implements OnClickListene
     public static ItemViewAdapter itemAdapter;
     public GridRecyclerOnScrollListener mScrollListener;
     NpaGridLayoutManager itemManager;
-    RecyclerView categoryRecycler, filterRecycler, itemRecycler;
+    RecyclerView filterRecycler, itemRecycler;
     ExpandableHeightGridView categoryGrid;
     LinearLayout llCategoryAll;
 
@@ -1968,7 +1968,6 @@ public class FragmentMainActivity extends BaseActivity implements OnClickListene
                 super(itemView);
                 viewPager = (AutoScrollViewPager) itemView.findViewById(R.id.view_pager);
                 pageIndicator = itemView.findViewById(R.id.indicator);
-                categoryRecycler = (RecyclerView) itemView.findViewById(R.id.categoryView);
                 llCategoryAll = (LinearLayout) itemView.findViewById(R.id.llCategoryMore);
                 categoryGrid = (ExpandableHeightGridView) itemView.findViewById(R.id.gridCategory);
                 categoryGrid.setExpanded(true);
@@ -1982,17 +1981,11 @@ public class FragmentMainActivity extends BaseActivity implements OnClickListene
                 } else {
                     viewPager.setVisibility(View.GONE);
                     pageIndicator.setVisibility(View.INVISIBLE);
-                    ViewGroup.MarginLayoutParams marginLayoutParams =
-                            (ViewGroup.MarginLayoutParams) categoryRecycler.getLayoutParams();
-                    marginLayoutParams.setMargins(0, JoysaleApplication.dpToPx(getApplicationContext(), 30), 0, 0);
-                    categoryRecycler.setLayoutParams(marginLayoutParams);
                 }
 
                 if (categoryAry.size() > 0) {
-                    categoryRecycler.setVisibility(View.VISIBLE);
                     categoryGrid.setVisibility(VISIBLE);
                 } else {
-                    categoryRecycler.setVisibility(View.GONE);
                     categoryGrid.setVisibility(GONE);
                 }
 
@@ -2103,20 +2096,6 @@ public class FragmentMainActivity extends BaseActivity implements OnClickListene
                         categoryGrid.setAdapter(new CategoryGridAdapter(categoryAry, FragmentMainActivity.this));
                     }
                 });
-
-                LinearLayoutManager layoutManager = new LinearLayoutManager(FragmentMainActivity.this, LinearLayoutManager.HORIZONTAL, false);
-                categoryRecycler.setLayoutManager(layoutManager);
-//                categoryRecycler.setLayoutManager(new SpeedyLinearLayoutManager(getApplicationContext(), SpeedyLinearLayoutManager.HORIZONTAL, false));
-                categoryRecycler.post(new Runnable() {
-                    @Override
-                    public void run() {
-                        categoryRecycler.setAdapter(new RecyclerViewAdapter(categoryAry, FragmentMainActivity.this));
-                    }
-                });
-                categoryRecycler.setHasFixedSize(true);
-                categoryRecycler.setNestedScrollingEnabled(false);
-                categoryRecycler.addOnItemTouchListener(categoryItemClick(FragmentMainActivity.this, categoryRecycler));
-
             }
         }
     }
