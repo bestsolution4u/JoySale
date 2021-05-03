@@ -1244,6 +1244,7 @@ public class DetailActivity extends BaseActivity implements OnClickListener, Par
                 }
                 TimeAgo timeAgo = new TimeAgo(mContext);
                 holder.tvPostedTime.setText(timeAgo.timeAgo(timestamp));
+                holder.tvCity.setText(tempMap.getLocation());
 
             } catch (NullPointerException e) {
                 e.printStackTrace();
@@ -1267,12 +1268,13 @@ public class DetailActivity extends BaseActivity implements OnClickListener, Par
         class MyViewHolder extends RecyclerView.ViewHolder {
             LinearLayout llItemContainer;
             ImageView ivProductImage;
-            TextView tvPostedTime, tvTitle, tvPrice;
+            TextView tvPostedTime, tvTitle, tvPrice, tvCity;
 
             public MyViewHolder(@NonNull View itemView) {
                 super(itemView);
                 llItemContainer = itemView.findViewById(R.id.llItemContainer);
                 ivProductImage = itemView.findViewById(R.id.ivProductImage);
+                tvCity = itemView.findViewById(R.id.tvCity);
                 tvPostedTime = itemView.findViewById(R.id.tvPostedTime);
                 tvTitle = itemView.findViewById(R.id.tvTitle);
                 tvPrice = itemView.findViewById(R.id.tvPrice);
@@ -1349,7 +1351,7 @@ public class DetailActivity extends BaseActivity implements OnClickListener, Par
                 }
                 TimeAgo timeAgo = new TimeAgo(context);
                 holder.tvPostedTime.setText(timeAgo.timeAgo(timestamp));
-
+                holder.tvCity.setText(tempMap.getLocation());
             } catch (NullPointerException e) {
                 e.printStackTrace();
             } catch (NumberFormatException e) {
@@ -1367,7 +1369,7 @@ public class DetailActivity extends BaseActivity implements OnClickListener, Par
         class MyViewHolder extends RecyclerView.ViewHolder {
             LinearLayout llItemContainer;
             ImageView ivProductImage;
-            TextView tvPostedTime, tvTitle, tvPrice;
+            TextView tvPostedTime, tvTitle, tvPrice, tvCity;
 
             public MyViewHolder(@NonNull View itemView) {
                 super(itemView);
@@ -1376,6 +1378,7 @@ public class DetailActivity extends BaseActivity implements OnClickListener, Par
                 tvPostedTime = itemView.findViewById(R.id.tvPostedTime);
                 tvTitle = itemView.findViewById(R.id.tvTitle);
                 tvPrice = itemView.findViewById(R.id.tvPrice);
+                tvCity = itemView.findViewById(R.id.tvCity);
                 llItemContainer.setOnClickListener(new OnClickListener() {
                     @Override
                     public void onClick(View v) {
