@@ -41,7 +41,6 @@
                 android:maxLines="1"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="@color/searchBarPlaceholderColor"
-                android:textStyle="bold"
                 android:visibility="visible"
                 app:layout_constraintEnd_toStartOf="@id/mt_search"
                 app:layout_constraintStart_toEndOf="@+id/mt_nav"

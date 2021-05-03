@@ -2335,7 +2335,7 @@ public class FragmentMainActivity extends BaseActivity implements OnClickListene
 
         @Override
         public int getCount() {
-            return itemList.size();
+            return Math.min(itemList.size(), 8);
         }
 
         @Override
